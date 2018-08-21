@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>支持跨域的对象</title>
+</head>
+<body>
+  <!-- 统计链接, 支持跨域但是无法实现获取服务端返回的数据 -->
+  <img src="http://www.itcast.cn?id=10&sdds=dsfs" alt="">
+  <!-- 支持，可以接收服务端数据，但是过程复杂 -->
+  <iframe src="http://www.itheima.com" frameborder="0"></iframe>
+  <!-- 会zaiCSS处理阶段报错 -->
+  <link rel="stylesheet" href="http://bbs.itcast.cn">
+  <!-- 可以拿到数据 -->
+  <script src="http://bbs.itheima.com?callback=callback"></script>
+  <!--相当于在页面调用了
+callback({id:1,name:张三,age:18})
+   -->
+  <script>
+
+  // function callback (data) {
+  //     console.log(data);
+  //   }这样会污染全局环境
+   /* (function () {
+    放到自执行函数里面外界又取不到
+    })();
+    在angluar中 它把callback封装到了一个对象里面，这样避免了全局的污染
+    window.angular = {};
+    angular.callbacks = {};
+    angular.callbacks._0=function () {
+      // body...
+    }
+    jquery采用的下面这种方式设计  声明一个全局函数后面跟一个随机数 防止重复
+    function jquery_jsonp121962347189 (arguments) {
+      // body...
+    }
+    */
+  </script>
+<script>
+  var a =1
+</script>
+  <script>
+    ; function  () {
+
+    }
+    这里写分号的原因是 为了以防上面的代码没有以分号结尾，从而产生错误
+  </script>
+</body>
+</html>
